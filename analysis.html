@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berco · Яндекс Директ — разбор и предложение по рекламной кампании</title>
+<style>
+:root{
+  --red:#e30613; --red-d:#9a0510; --red-bg:#fff1f2; --red-b:#ffe4e6;
+  --ink:#16161a; --ink2:#4a4a55; --mute:#7a7a86; --line:#e4e4ea; --bg:#f6f6f8; --card:#fff;
+  --ok:#1f7a4d; --ok-bg:#e9f6ef;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+header.hero{background:var(--ink);color:#fff;padding:56px 0 48px;position:relative;overflow:hidden}
+header.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:56px solid var(--red);border-radius:50%;opacity:.9}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase;color:#d2d2da}
+.brand i{display:inline-block;width:12px;height:12px;background:var(--red)}
+h1{font-size:44px;line-height:1.08;margin:22px 0 14px;max-width:720px;letter-spacing:-.02em;position:relative;z-index:1}
+.lead{font-size:19px;color:#d2d2da;max-width:640px;margin:0;position:relative;z-index:1}
+.meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:#a8a8b3;position:relative;z-index:1}
+.meta b{color:#fff;font-weight:600}
+section{padding:56px 0 8px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+h2{font-size:30px;line-height:1.15;margin:8px 0 10px;letter-spacing:-.01em}
+h3{font-size:19px;margin:0 0 6px}
+p.sub{color:var(--ink2);max-width:760px;margin:0 0 26px}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.kpi .v{font-size:32px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mute);font-size:14px}
+.kpi.bad .v{color:var(--red)}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-size:11px;fill:var(--mute)}
+.b-hi{fill:var(--ink)} .b-lo{fill:#b9b9c4}
+/* stacked bar */
+.stack{display:flex;height:46px;border-radius:8px;overflow:hidden;margin:6px 0 14px}
+.stack div{display:flex;align-items:center;padding:0 14px;color:#fff;font-weight:600;font-size:15px;white-space:nowrap}
+.s-ok{background:var(--ok)} .s-auto{background:var(--red)} .s-gen{background:#7a7a86}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--ink2)}
+.legend span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:0}
+.legend .l-ok:before{background:var(--ok)} .legend .l-auto:before{background:var(--red)} .legend .l-gen:before{background:#7a7a86}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--red-bg);color:var(--red-d);white-space:nowrap}
+.tag.ok{background:var(--ok-bg);color:var(--ok)} .tag.gray{background:#ebebef;color:var(--ink2)}
+.hbar{height:8px;background:#ebebef;border-radius:4px;overflow:hidden;min-width:80px}
+.hbar i{display:block;height:100%;background:var(--ink)}
+.hbar i.r{background:var(--red)}
+/* problems */
+.prob{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.prob:first-child{border-top:0}
+.num{width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.prob p{margin:0;color:var(--ink2)}
+/* campaigns */
+.camp{border-left:4px solid var(--ink)}
+.camp.pri{border-left-color:var(--red)}
+.camp .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+.camp ul{margin:8px 0 0;padding-left:18px;color:var(--ink2);font-size:15px}
+.camp li{margin:3px 0}
+.camp .lp{font-size:13px;color:var(--mute);margin-top:10px;word-break:break-all}
+.camp .lp a{color:var(--ink2)}
+/* serp mock */
+.serp{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;font-family:Arial,sans-serif}
+.serp .ad{font-size:12px;color:var(--mute);margin-bottom:4px}
+.serp .t{color:#1a0dab;font-size:19px;line-height:1.3}
+.serp .u{color:#006621;font-size:14px;margin:3px 0}
+.serp .d{color:#333;font-size:14px}
+.serp .sl{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px;color:#1a0dab}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:#fff;border:1px solid var(--line);border-radius:6px;padding:3px 9px;font-size:14px;font-family:ui-monospace,Menlo,monospace;color:var(--ink2)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{position:relative;padding:0 0 20px 48px}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.steps b{display:block}
+.steps span{color:var(--ink2);font-size:15px}
+.cta{background:var(--ink);color:#fff;border-radius:16px;padding:34px 36px;margin:56px 0}
+.cta h2{color:#fff;margin-top:0}
+.cta p{color:#d2d2da;margin:0}
+footer{color:var(--mute);font-size:13px;padding:0 0 48px}
+@media (max-width:860px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}h1{font-size:32px}header.hero:after{display:none}}
+@media (max-width:520px){.wrap{padding:0 18px}.g4{grid-template-columns:1fr 1fr}.kpi .v{font-size:26px}table{font-size:14px}.hide-m{display:none}}
+@media print{body{background:#fff}section{break-inside:avoid}.card{break-inside:avoid}}
+</style>
+<style>
+.sitenav{background:#0d0d10;border-bottom:1px solid #2a2a31;font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.sitenav .in{max-width:1120px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:48px}
+.sitenav .lg{color:#fff;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px;margin-right:14px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.sitenav .lg i{width:10px;height:10px;background:#e30613;display:inline-block}
+.sitenav a.it{color:#a8a8b3;text-decoration:none;padding:6px 12px;border-radius:999px}
+.sitenav a.it:hover{color:#fff;background:#1f1f25}
+.sitenav a.it.on{color:#fff;background:#e30613}
+.pager{max-width:1120px;margin:0 auto 40px;padding:0 28px;display:flex;justify-content:space-between;gap:12px;font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.pager a{flex:1;display:block;background:#fff;border:1px solid #e4e4ea;border-radius:12px;padding:14px 18px;color:#16161a;text-decoration:none}
+.pager a:hover{border-color:#e30613}
+.pager a span{display:block;font-size:12px;color:#7a7a86;text-transform:uppercase;letter-spacing:.06em}
+.pager a.nx{text-align:right}
+@media(max-width:600px){.sitenav .in{padding:6px 14px}.sitenav .lg{width:100%;margin:4px 0}.pager{flex-direction:column;padding:0 18px}}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Разделы"><div class="in"><a class="lg" href="index.html"><i></i>Berco · Директ</a><a class="it" href="index.html">Обзор</a><a class="it on" href="analysis.html">1 · Разбор и предложение</a><a class="it" href="campaign.html">2 · Новая РК</a></div></nav><div style="background:#fff1f2;border-bottom:1px solid #ffd0d5;font:14px/1.5 -apple-system,BlinkMacSystemFont,Arial,sans-serif"><div style="max-width:1120px;margin:0 auto;padding:10px 28px;color:#7d0612">Это первый документ (13.11). Прогноз кликов и бюджет в разделе 07 устарели: после проверки частотности и ответов клиента актуальная версия — <a href="campaign.html" style="color:#9a0510;font-weight:600">«Новая РК»</a>.</div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><i></i>Berco Mining · berco-mpg.com</div>
+    <h1>Яндекс Директ: разбор текущей рекламы и план перезапуска</h1>
+    <p class="lead">За первые три недели реклама дала клики, но не дала заявок. Ниже — почему так вышло и как перестроить кампанию, чтобы бюджет шёл на тех, кто ищет ходовую часть для экскаваторов и бульдозеров.</p>
+    <div class="meta">
+      <span>Аккаунт: <b>mpg.amm.ct</b></span>
+      <span>Период данных: <b>20.10 — 12.11.2026</b></span>
+      <span>Регион: <b>Казахстан</b></span>
+      <span>Дата: <b>13.11.2026</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1. Итоги -->
+<section>
+  <div class="kicker">01 · Итоги текущей кампании</div>
+  <h2>Деньги потрачены, заявок нет</h2>
+  <p class="sub">Одна кампания «Единая перфоманс-кампания №1»: 26 групп по брендам техники, только поиск, средняя цена клика до 1 500 ₸, лимит 53 000 ₸ в неделю.</p>
+  <div class="grid g4">
+    <div class="card kpi"><div class="v">25 837 ₸</div><div class="l">расход с НДС</div></div>
+    <div class="card kpi"><div class="v">143</div><div class="l">клика · CTR 3,3%</div></div>
+    <div class="card kpi"><div class="v">181 ₸</div><div class="l">средняя цена клика</div></div>
+    <div class="card kpi bad"><div class="v">0</div><div class="l">отправленных форм</div></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card kpi"><div class="v">17 сек</div><div class="l">среднее время на сайте с рекламы</div></div>
+    <div class="card kpi"><div class="v">54%</div><div class="l">отказов по рекламным визитам</div></div>
+    <div class="card kpi"><div class="v">2 + 3</div><div class="l">клика по телефону + перехода в мессенджер</div></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Показы по дням</h3>
+    <svg viewBox="0 0 760 170" class="chart" role="img" aria-label="Показы по дням"><rect x="3.0" y="148.7" width="24.4" height="1.3" rx="2" class="b-lo"><title>19.10: 5 показов, 0 кликов</title></rect><text x="15.2" y="166" text-anchor="middle">19.10</text><rect x="33.4" y="10.0" width="24.4" height="140.0" rx="2" class="b-hi"><title>20.10: 523 показов, 19 кликов</title></rect><rect x="63.8" y="51.8" width="24.4" height="98.2" rx="2" class="b-hi"><title>21.10: 367 показов, 14 кликов</title></rect><rect x="94.2" y="32.5" width="24.4" height="117.5" rx="2" class="b-hi"><title>22.10: 439 показов, 21 кликов</title></rect><rect x="124.6" y="40.5" width="24.4" height="109.5" rx="2" class="b-hi"><title>23.10: 409 показов, 11 кликов</title></rect><text x="136.8" y="166" text-anchor="middle">23.10</text><rect x="155.0" y="79.9" width="24.4" height="70.1" rx="2" class="b-hi"><title>24.10: 262 показов, 13 кликов</title></rect><rect x="185.4" y="82.0" width="24.4" height="68.0" rx="2" class="b-hi"><title>25.10: 254 показов, 7 кликов</title></rect><rect x="215.8" y="79.3" width="24.4" height="70.7" rx="2" class="b-hi"><title>26.10: 264 показов, 8 кликов</title></rect><rect x="246.2" y="102.4" width="24.4" height="47.6" rx="2" class="b-lo"><title>27.10: 178 показов, 7 кликов</title></rect><text x="258.4" y="166" text-anchor="middle">27.10</text><rect x="276.6" y="119.5" width="24.4" height="30.5" rx="2" class="b-lo"><title>28.10: 114 показов, 2 кликов</title></rect><rect x="307.0" y="54.2" width="24.4" height="95.8" rx="2" class="b-hi"><title>29.10: 358 показов, 0 кликов</title></rect><rect x="337.4" y="120.8" width="24.4" height="29.2" rx="2" class="b-lo"><title>30.10: 109 показов, 2 кликов</title></rect><rect x="367.8" y="144.6" width="24.4" height="5.4" rx="2" class="b-lo"><title>31.10: 20 показов, 0 кликов</title></rect><text x="380.0" y="166" text-anchor="middle">31.10</text><rect x="398.2" y="144.9" width="24.4" height="5.1" rx="2" class="b-lo"><title>01.11: 19 показов, 0 кликов</title></rect><rect x="428.6" y="133.7" width="24.4" height="16.3" rx="2" class="b-lo"><title>02.11: 61 показов, 4 кликов</title></rect><rect x="459.0" y="137.4" width="24.4" height="12.6" rx="2" class="b-lo"><title>03.11: 47 показов, 2 кликов</title></rect><rect x="489.4" y="128.6" width="24.4" height="21.4" rx="2" class="b-lo"><title>04.11: 80 показов, 5 кликов</title></rect><text x="501.6" y="166" text-anchor="middle">04.11</text><rect x="519.8" y="120.6" width="24.4" height="29.4" rx="2" class="b-lo"><title>05.11: 110 показов, 1 кликов</title></rect><rect x="550.2" y="116.0" width="24.4" height="34.0" rx="2" class="b-lo"><title>06.11: 127 показов, 8 кликов</title></rect><rect x="580.6" y="132.6" width="24.4" height="17.4" rx="2" class="b-lo"><title>07.11: 65 показов, 2 кликов</title></rect><rect x="611.0" y="132.1" width="24.4" height="17.9" rx="2" class="b-lo"><title>08.11: 67 показов, 2 кликов</title></rect><text x="623.2" y="166" text-anchor="middle">08.11</text><rect x="641.4" y="117.3" width="24.4" height="32.7" rx="2" class="b-lo"><title>09.11: 122 показов, 3 кликов</title></rect><rect x="671.8" y="111.2" width="24.4" height="38.8" rx="2" class="b-lo"><title>10.11: 145 показов, 5 кликов</title></rect><rect x="702.2" y="131.8" width="24.4" height="18.2" rx="2" class="b-lo"><title>11.11: 68 показов, 1 кликов</title></rect><rect x="732.6" y="126.2" width="24.4" height="23.8" rx="2" class="b-lo"><title>12.11: 89 показов, 6 кликов</title></rect><text x="744.8" y="166" text-anchor="middle">12.11</text></svg>
+    <div class="note">После 28.10 показы упали примерно с 400 до 80 в день: автотаргетинг израсходовал широкие запросы, а узкие ключи почти не ищут.</div>
+  </div>
+  <p class="note">Источники: отчёты API Яндекс Директа и Яндекс Метрика berco-mpg.com (счётчик 110341229).</p>
+</section>
+
+<!-- 2. Куда ушли деньги -->
+<section>
+  <div class="kicker">02 · Куда ушёл бюджет</div>
+  <h2>Только 15% денег — на запросы про ходовую и спецтехнику</h2>
+  <p class="sub">Мы разобрали все 1 927 поисковых запросов, по которым показывалась реклама. Основная часть — люди, которые ищут запчасти для легковых машин и авторазборы.</p>
+  <div class="card">
+    <div class="stack">
+      <div class="s-ok" style="width:15%">15%</div>
+      <div class="s-auto" style="width:40%">40%</div>
+      <div class="s-gen" style="width:45%">45%</div>
+    </div>
+    <div class="legend">
+      <span class="l-ok">Спецтехника и ходовая — 3 905 ₸, 14 кликов</span>
+      <span class="l-auto">Легковые авто и авторазборы — 10 381 ₸, 58 кликов</span>
+      <span class="l-gen">Общие «запчасти …» без техники — 11 551 ₸, 71 клик</span>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card">
+      <h3>Самые дорогие нецелевые запросы</h3>
+      <table>
+        <tr><th>Запрос</th><th class="n">₸</th></tr>
+        <tr><td>магазин автотоваров</td><td class="n">1 523</td></tr>
+        <tr><td>уфа запчасти на погрузчик</td><td class="n">1 489</td></tr>
+        <tr><td>рулим кз павлодар заказать запчасти</td><td class="n">1 149</td></tr>
+        <tr><td>jcb челябинск</td><td class="n">879</td></tr>
+        <tr><td>все для иномарок в воронеже</td><td class="n">684</td></tr>
+        <tr><td>hyundai tucson … замена ходовую часть</td><td class="n">500</td></tr>
+        <tr><td>авторазбор петропавловск</td><td class="n">373</td></tr>
+        <tr><td>запчасти hyundai elantra</td><td class="n">195</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Расход по группам</h3>
+      <table>
+        <tr><th>Группа</th><th class="n">₸</th><th class="hide-m"></th></tr>
+        <tr><td>Hyundai <span class="tag">легковые</span></td><td class="n">10 331</td><td class="hide-m"><div class="hbar"><i class="r" style="width:100%"></i></div></td></tr>
+        <tr><td>Volvo</td><td class="n">4 616</td><td class="hide-m"><div class="hbar"><i style="width:45%"></i></div></td></tr>
+        <tr><td>JCB</td><td class="n">3 052</td><td class="hide-m"><div class="hbar"><i style="width:30%"></i></div></td></tr>
+        <tr><td>John Deere</td><td class="n">2 321</td><td class="hide-m"><div class="hbar"><i style="width:22%"></i></div></td></tr>
+        <tr><td>Caterpillar</td><td class="n">1 087</td><td class="hide-m"><div class="hbar"><i style="width:11%"></i></div></td></tr>
+        <tr><td>Остальные 21 группа</td><td class="n">4 430</td><td class="hide-m"><div class="hbar"><i style="width:43%"></i></div></td></tr>
+      </table>
+      <div class="note">Группа Hyundai забрала 40% бюджета: Яндекс показывал её тем, кто ищет запчасти для легковых Hyundai.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Причины -->
+<section>
+  <div class="kicker">03 · Почему так вышло</div>
+  <h2>Шесть причин</h2>
+  <div class="card">
+    <div class="prob"><div class="num">1</div><div><h3>Работает только автотаргетинг</h3><p>Все 143 клика пришли через автотаргетинг: запросы за кампанию подбирал Яндекс. Из 1 040 ключевых фраз ни одна не дала клика — фразы вроде «оригинальный ленивец caterpillar» почти никто не ищет.</p></div></div>
+    <div class="prob"><div class="num">2</div><div><h3>Название бренда техники без слов «экскаватор», «бульдозер», «ходовая»</h3><p>Для Яндекса «Hyundai», «Volvo», «John Deere» — это прежде всего машины и тракторы. Без привязки к спецтехнике и ходовой реклама уходит к автовладельцам.</p></div></div>
+    <div class="prob"><div class="num">3</div><div><h3>Метрика не связана с кампанией</h3><p>У кампании не указан счётчик, метка Метрики выключена. Директ не видит заявок и учится на «вовлечённых визитах», а не на звонках и формах.</p></div></div>
+    <div class="prob"><div class="num">4</div><div><h3>88% бюджета — телефоны</h3><p>С телефонов отказы 67%, с компьютеров — 39%. Закупщики и механики, которые подбирают ходовую по каталогу, чаще работают с компьютера.</p></div></div>
+    <div class="prob"><div class="num">5</div><div><h3>Ссылки ведут не туда</h3><p>11 групп ведут на общую страницу /brands. На сайте уже есть страницы под тип техники (горные и строительные экскаваторы и бульдозеры) и под узлы (катки, ленивцы, звёздочки, звенья) — реклама их не использует.</p></div></div>
+    <div class="prob"><div class="num">6</div><div><h3>Объявления заполнены не полностью</h3><p>Во всех 26 объявлениях пустой второй заголовок, в группе одно объявление — Яндексу не из чего выбрать лучший вариант.</p></div></div>
+  </div>
+</section>
+
+<!-- 4. Структура -->
+<section>
+  <div class="kicker">04 · Предложение</div>
+  <h2>Новая структура: от того, что ищет клиент</h2>
+  <p class="sub">Вместо 26 групп «по бренду» — 4 поисковые кампании по смыслу запроса и одна кампания возврата посетителей. Каждая ведёт на свою страницу сайта.</p>
+  <div class="grid g2">
+    <div class="card camp pri">
+      <div class="hd"><h3>1. Ходовая по типу техники</h3><span class="tag">основная</span></div>
+      <div>Человек знает, какая у него машина, и ищет ходовую к ней.</div>
+      <ul>
+        <li>ходовая часть экскаватора / бульдозера</li>
+        <li>ходовая для карьерного экскаватора</li>
+        <li>ходовая часть экскаватора hitachi, komatsu, cat…</li>
+      </ul>
+      <div class="lp">→ <a href="https://berco-mpg.com/solutions/mining-excavator">/solutions/mining-excavator</a>, /construction-excavator, /mining-dozer, /construction-dozer</div>
+    </div>
+    <div class="card camp pri">
+      <div class="hd"><h3>2. Узлы ходовой</h3><span class="tag">основная</span></div>
+      <div>Ищут конкретную деталь: каток, ленивец, звёздочку, цепь.</div>
+      <ul>
+        <li>опорные катки экскаватора, поддерживающие ролики</li>
+        <li>ленивец (направляющее колесо) бульдозера</li>
+        <li>звёздочка, сегменты, звено гусеницы в сборе</li>
+      </ul>
+      <div class="lp">→ <a href="https://berco-mpg.com/products/rollers">/products/rollers</a>, /idlers, /sprockets, /tga</div>
+    </div>
+    <div class="card camp">
+      <div class="hd"><h3>3. Карьерные модели</h3><span class="tag gray">точечная</span></div>
+      <div>Крупные машины с дорогой ходовой: высокий чек, мало запросов.</div>
+      <ul>
+        <li>CAT D9 / D10 / D11, 6020B</li>
+        <li>Komatsu D275 / D375 / D475, PC1250</li>
+        <li>Hitachi EX1200, Liebherr R9250</li>
+      </ul>
+      <div class="lp">→ карточки моделей в /catalog (уже настроены)</div>
+    </div>
+    <div class="card camp">
+      <div class="hd"><h3>4. Бренд Berco</h3><span class="tag gray">защита</span></div>
+      <div>Ищут именно Berco — самые «тёплые» клиенты, клик дешёвый.</div>
+      <ul>
+        <li>berco, берко, ходовая berco</li>
+        <li>berco казахстан, berco купить</li>
+      </ul>
+      <div class="lp">→ <a href="https://berco-mpg.com/berco">/berco</a>, главная</div>
+    </div>
+    <div class="card camp" style="grid-column:1/-1">
+      <div class="hd"><h3>5. Возврат посетителей (РСЯ, ретаргетинг)</h3><span class="tag gray">через 2–3 недели</span></div>
+      <div>Показываем рекламу тем, кто был на сайте и не оставил заявку. Включаем, когда в Метрике наберётся аудитория от 1 000 человек.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Объявления -->
+<section>
+  <div class="kicker">05 · Объявления</div>
+  <h2>Как будет выглядеть реклама</h2>
+  <p class="sub">2–3 варианта текста в каждой группе, оба заголовка, быстрые ссылки на реальные страницы сайта. Пример для кампании «Ходовая по типу техники»:</p>
+  <div class="grid g2">
+    <div class="serp">
+      <div class="ad">Реклама</div>
+      <div class="t">Ходовая Berco для экскаваторов — подбор по модели</div>
+      <div class="u">berco-mpg.com › ekskavatory</div>
+      <div class="d">Катки, ленивцы, звёздочки, звенья гусениц. Гарантия до 36 мес. Поставка по РК.</div>
+      <div class="sl"><span>Опорные катки</span><span>Ленивцы</span><span>Звёздочки</span><span>Контакты</span></div>
+    </div>
+    <div class="serp">
+      <div class="ad">Реклама</div>
+      <div class="t">Опорные катки на экскаватор — Berco, Италия</div>
+      <div class="u">berco-mpg.com › rollers</div>
+      <div class="d">Опорные и поддерживающие ролики Berco. Подберём по модели машины. Казахстан.</div>
+      <div class="sl"><span>Каталог</span><span>Как идёт поставка</span><span>О Berco</span><span>Контакты</span></div>
+    </div>
+  </div>
+  <p class="note">Тексты — черновик: формулировки про сроки, наличие и цены согласуем с отделом продаж, прежде чем запускать.</p>
+</section>
+
+<!-- 6. Минус-слова и настройки -->
+<section>
+  <div class="kicker">06 · Настройки</div>
+  <h2>Отсекаем мусор и подключаем аналитику</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Добавить в минус-слова</h3>
+      <div class="chips" style="margin-top:10px">
+        <span>авто</span><span>автотовары</span><span>авторазбор</span><span>разбор</span><span>машина</span><span>иномарка</span><span>легковой</span><span>контрактные</span><span>вин код</span><span>стойки</span><span>приложение</span><span>tucson</span><span>elantra</span><span>solaris</span><span>accent</span><span>рулим</span><span>форсаж</span><span>россия</span><span>уфа</span><span>челябинск</span><span>омск</span><span>воронеж</span><span>сша</span><span>германия</span>
+      </div>
+      <div class="note">Плюс общий список из 207 слов, который уже есть в кампании.</div>
+    </div>
+    <div class="card">
+      <h3>Технические настройки</h3>
+      <table>
+        <tr><td>Счётчик Метрики 110341229</td><td><span class="tag ok">привязать</span></td></tr>
+        <tr><td>Метка Метрики (yclid)</td><td><span class="tag ok">включить</span></td></tr>
+        <tr><td>Цели: форма, звонок, мессенджер, страница «Контакты»</td><td><span class="tag ok">в стратегию</span></td></tr>
+        <tr><td>Автотаргетинг</td><td><span class="tag">только «целевые»</span></td></tr>
+        <tr><td>Ставка на телефонах</td><td><span class="tag">−50%</span></td></tr>
+        <tr><td>Показы по интересам вне региона</td><td><span class="tag">выключить</span></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Бюджет и план -->
+<section>
+  <div class="kicker">07 · Бюджет и сроки</div>
+  <h2>Тестовый месяц, потом — масштаб</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Бюджет на тест</h3>
+      <table>
+        <tr><th>Кампания</th><th class="n">₸ / мес</th></tr>
+        <tr><td>Ходовая по типу техники</td><td class="n">60 000</td></tr>
+        <tr><td>Узлы ходовой</td><td class="n">50 000</td></tr>
+        <tr><td>Карьерные модели</td><td class="n">25 000</td></tr>
+        <tr><td>Бренд Berco</td><td class="n">15 000</td></tr>
+        <tr><td><b>Итого</b></td><td class="n"><b>150 000</b></td></tr>
+      </table>
+      <div class="note">Это меньше текущего недельного лимита ×4 (≈ 230 000 ₸). Сейчас лимит не расходуется: запросов просто не хватает.</div>
+    </div>
+    <div class="card">
+      <h3>Ожидания на первый месяц</h3>
+      <table>
+        <tr><td>Цена клика по целевым запросам</td><td class="n">200–400 ₸</td></tr>
+        <tr><td>Кликов</td><td class="n">350–700</td></tr>
+        <tr><td>Доля целевых запросов</td><td class="n">от 70%</td></tr>
+        <tr><td>Обращений (форма + звонок + мессенджер)</td><td class="n">7–20</td></tr>
+      </table>
+      <div class="note">Это оценка, а не обещание: частоту запросов в Казахстане через API получить не удалось, конверсию сайта берём 2–3%. Точные цифры будут после 2 недель работы.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3 style="margin-bottom:16px">План работ</h3>
+    <ol class="steps">
+      <li><b>День 1 — срочно, без перезапуска</b><span>Минус-слова, только «целевой» автотаргетинг, −50% на телефонах, привязка Метрики и целей. Останавливает слив уже сегодня.</span></li>
+      <li><b>Дни 2–4 — новая структура</b><span>Собираем 4 поисковые кампании, семантику по типам техники и узлам, по 2–3 объявления в группе, быстрые ссылки. Тексты согласуем с вами.</span></li>
+      <li><b>Недели 1–2 — сбор данных</b><span>Стратегия с ограничением цены клика. Каждые 2–3 дня чистим поисковые запросы и дополняем минус-слова.</span></li>
+      <li><b>Недели 3–4 — оптимизация</b><span>Перераспределяем бюджет в кампании, которые дают обращения. Когда наберётся 10+ конверсий в неделю — переводим на оплату за конверсии и включаем ретаргетинг.</span></li>
+    </ol>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Что нужно от вас</h2>
+  <p>1) Согласовать структуру и тестовый бюджет 150 000 ₸/мес. 2) Подтвердить, что можно писать в объявлениях: сроки поставки, гарантию, наличие на складе. 3) Дать добро на срочные правки первого дня — их можно внести сразу.</p>
+</div>
+
+</main>
+<footer class="wrap">Данные: Яндекс Директ API (кампания 715120629) и Яндекс Метрика (счётчик 110341229), 20.10–12.11.2026. Суммы — в тенге с НДС.</footer>
+<div class="pager"><a href="index.html"><span>← Назад</span>Обзор</a><a class="nx" href="campaign.html"><span>Дальше →</span>2 · Новая РК</a></div>
+</body>
+</html>
