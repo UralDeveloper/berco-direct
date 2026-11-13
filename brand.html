@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berco · Брендовая РК и загрузка в Директ</title>
+<style>
+:root{--red:#e30613;--red-d:#9a0510;--red-bg:#fff1f2;--ink:#16161a;--ink2:#4a4a55;--mute:#7a7a86;--line:#e4e4ea;--bg:#f6f6f8;--ok:#1f7a4d;--ok-bg:#e9f6ef}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+header.hero{background:var(--ink);color:#fff;padding:52px 0 44px;position:relative;overflow:hidden}
+header.hero:after{content:"";position:absolute;right:-140px;top:-140px;width:440px;height:440px;border:56px solid var(--red);border-radius:50%}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase;color:#d2d2da}
+.brand i{width:12px;height:12px;background:var(--red);display:inline-block}
+h1{font-size:42px;line-height:1.08;margin:20px 0 12px;max-width:760px;letter-spacing:-.02em;position:relative;z-index:1}
+.lead{font-size:18px;color:#d2d2da;max-width:660px;margin:0;position:relative;z-index:1}
+.hs{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;position:relative;z-index:1}
+.hs div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 18px;min-width:130px}
+.hs b{display:block;font-size:26px;letter-spacing:-.01em}
+.hs span{font-size:13px;color:#a8a8b3}
+nav.toc{position:sticky;top:0;z-index:5;background:rgba(246,246,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;font-size:14px}
+nav.toc a{color:var(--ink2);text-decoration:none}nav.toc a:hover{color:var(--red)}
+section{padding:52px 0 6px;scroll-margin-top:50px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+h2{font-size:30px;line-height:1.15;margin:8px 0 10px;letter-spacing:-.01em}
+h3{font-size:19px;margin:0 0 6px}
+p.sub{color:var(--ink2);max-width:780px;margin:0 0 24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+/* путь клиента */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.fs{background:#fff;border:1px solid var(--line);padding:16px 16px 14px;position:relative}
+.fs:first-child{border-radius:12px 0 0 12px}.fs:last-child{border-radius:0 12px 12px 0;background:var(--ink);color:#fff;border-color:var(--ink)}
+.fs:not(:last-child):after{content:"";position:absolute;right:-9px;top:50%;width:16px;height:16px;background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);transform:translateY(-50%) rotate(45deg);z-index:2}
+.fs .st{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.fs b{display:block;margin:4px 0 6px;font-size:16px}
+.fs p{margin:0;font-size:14px;color:var(--ink2)}.fs:last-child p{color:#d2d2da}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+.princ{counter-reset:p;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:20px}
+.princ div{position:relative;padding-left:34px}
+.princ div:before{counter-increment:p;content:counter(p);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.princ p{margin:2px 0 0;color:var(--ink2);font-size:15px}
+/* было-стало */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.was{color:var(--red-d)} td.now{color:var(--ok)}
+td.bar{width:28%}
+.hbar{height:8px;background:#ebebef;border-radius:4px;overflow:hidden}.hbar i{display:block;height:100%;background:var(--ink)}
+/* дерево */
+.tree{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:13.5px}
+.tn{display:block;text-decoration:none;color:var(--ink);font-size:15px;line-height:1.3;padding-bottom:10px;margin-bottom:8px;border-bottom:2px solid var(--ink)}
+.tn b{color:var(--red)} .tn i{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.p-a{color:var(--red)}.p-b,.p-c{color:var(--mute)}
+.tg{padding:5px 0;border-bottom:1px dashed var(--line);line-height:1.3}.tg:last-child{border:0}
+.tg span{display:block;color:var(--mute);font-family:ui-monospace,Menlo,monospace;font-size:11.5px;word-break:break-all}
+/* кампании */
+.camp{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:22px;overflow:hidden}
+.ch{display:grid;grid-template-columns:1fr auto;gap:20px;padding:22px 24px;border-bottom:1px solid var(--line);background:linear-gradient(#fff,#fafafb)}
+.ch .code{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:13px;border-radius:6px;padding:2px 8px;margin-bottom:8px}
+.ch p{margin:0;color:var(--ink2);max-width:520px;font-size:15px}
+.cs{display:grid;grid-template-columns:repeat(4,auto);gap:4px 22px;align-self:center}
+.cs b{display:block;font-size:17px;white-space:nowrap}.cs span{font-size:12px;color:var(--mute)}
+details.grp{border-top:1px solid var(--line)}details.grp:first-of-type{border-top:0}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto 260px;gap:14px;align-items:center;padding:14px 24px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:#fafafb}
+.gn{font-weight:600}.gn:before{content:"＋";display:inline-block;width:22px;color:var(--red);font-weight:700}
+details[open] .gn:before{content:"－"}
+.gm{font-size:13px;color:var(--mute);white-space:nowrap}
+.gl{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--ink2);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gb{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;padding:4px 24px 24px 46px}
+.lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600;margin:12px 0 8px}
+.lbl:first-child{margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:#f3f3f6;border-radius:6px;padding:3px 9px;font-size:14px;color:var(--ink)}
+.chips span.m{background:var(--red-bg);color:var(--red-d)}
+.chips em{font-size:14px;color:var(--mute)}
+a.lp{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--ink2);word-break:break-all}
+.serp{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px;font-family:Arial,sans-serif;background:#fff}
+.serp .adl{font-size:12px;color:var(--mute)}
+.serp .t{color:#1a0dab;font-size:18px;line-height:1.3;margin:2px 0}
+.serp .u{color:#006621;font-size:13.5px}
+.serp .d{color:#333;font-size:14px;margin-top:3px}
+.serp .co{color:var(--mute);font-size:13px;margin-top:4px}
+.serp .sl{display:flex;flex-wrap:wrap;gap:2px 14px;margin-top:6px;font-size:13.5px;color:#1a0dab}
+/* настройки */
+.set td:first-child{width:34%;font-weight:600}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ok-bg);color:var(--ok);white-space:nowrap}
+.tag.r{background:var(--red-bg);color:var(--red-d)}.tag.g{background:#ebebef;color:var(--ink2)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{position:relative;padding:0 0 20px 48px}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.steps b{display:block}.steps span{color:var(--ink2);font-size:15px}
+.q li{margin:0 0 10px;color:var(--ink2)}.q b{color:var(--ink)}
+.chips span b{font-weight:600;margin-left:7px;color:var(--ok);font-size:13px}
+.chips span.z{color:var(--mute);background:#f6f6f8}.chips span.z b{color:var(--mute);font-weight:400}
+.fp{color:var(--ok);font-weight:600}.fz{color:var(--mute);font-weight:400}
+tr.bh td{font-weight:600;background:#fafafb;padding-top:14px}tr.bh span{font-weight:400;color:var(--mute)}
+.warn{background:var(--red-bg);border:1px solid #ffd0d5;border-radius:12px;padding:18px 22px;color:var(--ink)}
+.warn b{color:var(--red-d)}
+.concl li{margin:0 0 12px;color:var(--ink2)}.concl b{color:var(--ink)}
+.serp.net{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start}
+.serp.net .img{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#ebebef 0 8px,#f3f3f6 8px 16px);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--ink2);padding:6px}
+.serp.net .img small{color:var(--mute);font-size:11px}
+.serp.net .t{font-size:16px;color:var(--ink);font-weight:600}
+.dec li{margin:0 0 10px;color:var(--ink2)}.dec b{color:var(--ink)}
+footer{color:var(--mute);font-size:13px;padding:40px 0 48px}
+@media (max-width:980px){.tree{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.fs{border-radius:0!important}.fs:first-child{border-radius:12px 12px 0 0!important}.fs:last-child{border-radius:0 0 12px 12px!important}.fs:after{display:none}.ch{grid-template-columns:1fr}.cs{grid-template-columns:repeat(2,auto);justify-content:start}summary{grid-template-columns:1fr auto}.gl{display:none}.gb{grid-template-columns:1fr;padding-left:24px}}
+@media (max-width:720px){.g2,.g4,.princ{grid-template-columns:1fr}h1{font-size:30px}header.hero:after{display:none}.tree{grid-template-columns:1fr}.wrap{padding:0 18px}td.bar{display:none}}
+@media print{nav.toc{display:none}details.grp{break-inside:avoid}}
+</style>
+<style>.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}.serp.net img{display:block}</style>
+<style>
+.sitenav{background:#0d0d10;border-bottom:1px solid #2a2a31;font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.sitenav .in{max-width:1120px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:48px}
+.sitenav .lg{color:#fff;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px;margin-right:14px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.sitenav .lg i{width:10px;height:10px;background:#e30613;display:inline-block}
+.sitenav a.it{color:#a8a8b3;text-decoration:none;padding:6px 12px;border-radius:999px}
+.sitenav a.it:hover{color:#fff;background:#1f1f25}
+.sitenav a.it.on{color:#fff;background:#e30613}
+.pager{max-width:1120px;margin:0 auto 40px;padding:0 28px;display:flex;justify-content:space-between;gap:12px;font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.pager a{flex:1;display:block;background:#fff;border:1px solid #e4e4ea;border-radius:12px;padding:14px 18px;color:#16161a;text-decoration:none}
+.pager a:hover{border-color:#e30613}
+.pager a span{display:block;font-size:12px;color:#7a7a86;text-transform:uppercase;letter-spacing:.06em}
+.pager a.nx{text-align:right}
+@media(max-width:600px){.sitenav .in{padding:6px 14px}.sitenav .lg{width:100%;margin:4px 0}.pager{flex-direction:column;padding:0 18px}}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Разделы"><div class="in"><a class="lg" href="index.html"><i></i>Berco · Директ</a><a class="it" href="index.html">Обзор</a><a class="it" href="analysis.html">1 · Разбор и предложение</a><a class="it" href="campaign.html">2 · Новая РК</a><a class="it on" href="brand.html">3 · Бренд Berco и кабинет</a></div></nav>
+<header class="hero"><div class="wrap">
+  <div class="brand"><i></i>Berco Mining · berco-mpg.com · Яндекс Директ</div>
+  <h1>Дополнительная РК под бренд Berco</h1>
+  <p class="lead">Две кампании: поиск ловит всех, кто уже ищет Berco в любом написании, а РСЯ знакомит с брендом владельцев CAT, Komatsu и Hitachi. Обе — вместе с основной РК — уже загружены в кабинет черновиками.</p>
+  <div class="hs">
+    <div><b>2</b><span>кампании: поиск + РСЯ</span></div>
+    <div><b>4</b><span>группы</span></div>
+    <div><b>29</b><span>фраз</span></div>
+    <div><b>10</b><span>объявлений</span></div>
+    <div><b>6 500 ₸</b><span>в неделю</span></div>
+  </div>
+</div></header>
+<main class="wrap">
+
+<section id="why">
+  <div class="kicker">01 · Спрос</div>
+  <h2>Berco в Казахстане ищут ~50 раз в месяц</h2>
+  <p class="sub">Прогноз Яндекса по Казахстану, показов в месяц. Бренд пока почти не знают, поэтому одного поиска мало — нужна РСЯ, чтобы бренд увидели.</p>
+  <div class="grid2">
+    <div class="card"><h3>Брендовые запросы</h3><table><tr><th>Фраза</th><th class="n">показов/мес</th></tr><tr><td>берко</td><td class="n">25</td></tr><tr><td>berco</td><td class="n">18</td></tr><tr><td>berko</td><td class="n">6</td></tr><tr><td>бэрко</td><td class="n">2</td></tr><tr><td>berco купить</td><td class="n">2</td></tr><tr><td>аналог ходовой</td><td class="n">15</td></tr><tr><td>ходовая аналог</td><td class="n">15</td></tr></table>
+      <div class="note">Ещё 50 проверенных фраз дают 0: «berco ходовая», «berco катки», «berco казахстан», «берко ходовая», ITM, Vematrack, Topy и другие конкуренты. Их всё равно держим в Б1: показ стоит 0, а если кто-то спросит — реклама будет.</div></div>
+    <div class="card"><h3>Аудитория для РСЯ (Б2)</h3><table><tr><th>Фраза</th><th class="n">показов/мес</th></tr><tr><td>komatsu</td><td class="n">1161</td></tr><tr><td>caterpillar</td><td class="n">1079</td></tr><tr><td>гусеничный экскаватор</td><td class="n">448</td></tr><tr><td>гусеничный бульдозер</td><td class="n">68</td></tr><tr><td>hitachi экскаватор</td><td class="n">66</td></tr><tr><td>экскаватор komatsu</td><td class="n">65</td></tr><tr><td>карьерный экскаватор</td><td class="n">56</td></tr><tr><td>бульдозер komatsu</td><td class="n">42</td></tr><tr><td>экскаватор caterpillar</td><td class="n">30</td></tr><tr><td>бульдозер caterpillar</td><td class="n">13</td></tr></table>
+      <div class="note">В РСЯ фраза работает по истории поиска: объявление увидит тот, кто недавно искал «komatsu» или «гусеничный экскаватор», — на сайтах и в приложениях Яндекса.</div></div>
+  </div>
+</section>
+
+<section id="camps">
+  <div class="kicker">02 · Кампании</div>
+  <h2>Б1 · поиск по бренду и Б2 · знакомство с брендом</h2>
+  <p class="sub">Все ссылки ведут на страницу <span class="mono">/berco</span> — про производителя, историю с 1920 года и thyssenkrupp. Объявления показаны в том виде, в каком они сохранены в Директе.</p>
+  <div class="camp" id="Б1"><div class="ch">
+<div><div class="code">Б1</div><h3>Поиск · Бренд Berco</h3><p>Человек уже знает Berco и ищет, где купить. Самые тёплые запросы и самый дешёвый клик. Заменяет К5 из основной РК — шире по написаниям бренда.</p></div>
+<div class="cs"><div><b>1 500 ₸</b><span>в неделю</span></div><div><b>до 150 ₸</b><span>потолок цены клика</span></div>
+<div><b>68</b><span>показов/мес в поиске</span></div><div><b>только целевые</b><span>автотаргетинг</span></div></div></div>
+<details class="grp" open>
+<summary><span class="gn">Berco — латиница</span><span class="gm"><b class="fp">20 показов/мес в поиске</b> · 9 фраз · 3 объявл.</span><span class="gl">/berco</span></summary>
+<div class="gb"><div class="gcol"><div class="lbl">Ключевые фразы · прогноз показов в месяц по Казахстану</div><div class="chips"><span class=''>berco<b>18</b></span><span class=''>berco купить<b>2</b></span><span class='z'>berco ходовая<b>0</b></span><span class='z'>berco катки<b>0</b></span><span class='z'>berco запчасти<b>0</b></span><span class='z'>berco каталог<b>0</b></span><span class='z'>berco цена<b>0</b></span><span class='z'>berco казахстан<b>0</b></span><span class='z'>berco официальный дилер<b>0</b></span></div>
+<div class="lbl">Минус-слова группы</div><div class="chips"><span class='m'>−часы</span><span class='m'>−watch</span><span class='m'>−кольцо</span><span class='m'>−фамилия</span></div>
+<div class="lbl">Посадочная страница</div><a class="lp" href="https://berco-mpg.com/berco" target="_blank">https://berco-mpg.com/berco</a></div>
+<div class="gcol"><div class="lbl">Объявления — как увидит человек в поиске</div><div class="serp"><div class="adl">Реклама</div><div class="t">Berco в Казахстане — официальный представитель</div><div class="u">berco-mpg.com › berco</div><div class="d">MPG — официальный представитель Berco в Средней Азии. Подбор и поставка.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div><div class="serp"><div class="adl">Реклама</div><div class="t">Ходовая Berco — производитель из Италии</div><div class="u">berco-mpg.com › berco</div><div class="d">Катки, ленивцы, звёздочки, цепи для CAT, Komatsu, Hitachi. Подбор по модели.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div><div class="serp"><div class="adl">Реклама</div><div class="t">Купить ходовую Berco в Казахстане. Гарантия до 4000 м/ч</div><div class="u">berco-mpg.com › berco</div><div class="d">Подберём комплект Berco под модель вашей машины. Поставка из Европы.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div></div></div></details><details class="grp">
+<summary><span class="gn">Берко — кириллица и опечатки</span><span class="gm"><b class="fp">33 показов/мес в поиске</b> · 6 фраз · 2 объявл.</span><span class="gl">/berco</span></summary>
+<div class="gb"><div class="gcol"><div class="lbl">Ключевые фразы · прогноз показов в месяц по Казахстану</div><div class="chips"><span class=''>берко<b>25</b></span><span class=''>berko<b>6</b></span><span class=''>бэрко<b>2</b></span><span class='z'>берко ходовая<b>0</b></span><span class='z'>берко катки<b>0</b></span><span class='z'>берко запчасти<b>0</b></span></div>
+<div class="lbl">Минус-слова группы</div><div class="chips"><span class='m'>−часы</span><span class='m'>−кольцо</span><span class='m'>−фамилия</span><span class='m'>−львов</span><span class='m'>−украина</span></div>
+<div class="lbl">Посадочная страница</div><a class="lp" href="https://berco-mpg.com/berco" target="_blank">https://berco-mpg.com/berco</a></div>
+<div class="gcol"><div class="lbl">Объявления — как увидит человек в поиске</div><div class="serp"><div class="adl">Реклама</div><div class="t">Берко (Berco) — ходовая для экскаваторов</div><div class="u">berco-mpg.com › berco</div><div class="d">Катки, ленивцы, звёздочки, цепи итальянского производителя. Подбор по модели.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div><div class="serp"><div class="adl">Реклама</div><div class="t">Ходовая Берко из Италии — подбор по модели</div><div class="u">berco-mpg.com › berco</div><div class="d">Berco — производитель ходовой с 1920 года. Поставка из Европы в Казахстан.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div></div></div></details><details class="grp">
+<summary><span class="gn">Аналог оригинальной ходовой</span><span class="gm"><b class="fp">15 показов/мес в поиске</b> · 4 фраз · 2 объявл.</span><span class="gl">/berco</span></summary>
+<div class="gb"><div class="gcol"><div class="lbl">Ключевые фразы · прогноз показов в месяц по Казахстану</div><div class="chips"><span class=''>аналог ходовой<b>15</b></span><span class='z'>аналог оригинальной ходовой<b>0</b></span><span class='z'>неоригинальная ходовая<b>0</b></span><span class='z'>ходовая не оригинал<b>0</b></span></div>
+<div class="lbl">Минус-слова группы</div><div class="chips"><span class='m'>−лада</span><span class='m'>−ваз</span><span class='m'>−газель</span><span class='m'>−уаз</span><span class='m'>−легковой</span><span class='m'>−автомобиль</span><span class='m'>−форд</span><span class='m'>−тойота</span><span class='m'>−камаз</span></div>
+<div class="lbl">Посадочная страница</div><a class="lp" href="https://berco-mpg.com/berco" target="_blank">https://berco-mpg.com/berco</a></div>
+<div class="gcol"><div class="lbl">Объявления — как увидит человек в поиске</div><div class="serp"><div class="adl">Реклама</div><div class="t">Аналог оригинальной ходовой — Berco, Италия</div><div class="u">berco-mpg.com › analog</div><div class="d">Часто тот же производитель, что и оригинал. Подбор по модели техники.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div><div class="serp"><div class="adl">Реклама</div><div class="t">Ходовая Berco вместо оригинала CAT и Komatsu</div><div class="u">berco-mpg.com › analog</div><div class="d">Катки, ленивцы, звёздочки, цепи. Официальный представитель Berco в РК.</div><div class="co">Официальный представитель · Гарантия до 4000 м/ч · Подбор по модели</div><div class="sl"><span>Каталог ходовой</span><span>Как идёт поставка</span><span>О производителе Berco</span><span>Контакты</span></div></div></div></div></details></div><div class="camp" id="Б2"><div class="ch">
+<div><div class="code">Б2</div><h3>РСЯ · Знакомство с брендом Berco</h3><p>Про Berco в Казахстане мало кто знает — бренд ищут ~50 раз в месяц. Показываем объявления с фото завода и ходовой тем, кто интересуется CAT, Komatsu, Hitachi и гусеничной техникой. Цель — чтобы при замене ходовой вспомнили Berco.</p></div>
+<div class="cs"><div><b>5 000 ₸</b><span>в неделю</span></div><div><b>до 100 ₸</b><span>потолок цены клика</span></div>
+<div><b>3028</b><span>показов/мес в поиске</span></div><div><b>остановлен</b><span>автотаргетинг</span></div></div></div>
+<details class="grp" open>
+<summary><span class="gn">Ключевые фразы: марки и гусеничная техника</span><span class="gm"><b class="fp">3028 показов/мес в поиске</b> · 10 фраз · 3 объявл.</span><span class="gl">/berco</span></summary>
+<div class="gb"><div class="gcol"><div class="lbl">Ключевые фразы — в РСЯ работают по истории поиска человека; число — показы в поиске по Казахстану, для оценки охвата</div><div class="chips"><span class=''>komatsu<b>1161</b></span><span class=''>caterpillar<b>1079</b></span><span class=''>гусеничный экскаватор<b>448</b></span><span class=''>гусеничный бульдозер<b>68</b></span><span class=''>hitachi экскаватор<b>66</b></span><span class=''>экскаватор komatsu<b>65</b></span><span class=''>карьерный экскаватор<b>56</b></span><span class=''>бульдозер komatsu<b>42</b></span><span class=''>экскаватор caterpillar<b>30</b></span><span class=''>бульдозер caterpillar<b>13</b></span></div>
+<div class="lbl">Минус-слова группы</div><div class="chips"><span class='m'>−вилочный</span><span class='m'>−погрузчик</span><span class='m'>−игрушка</span><span class='m'>−модель</span><span class='m'>−аренда</span><span class='m'>−вакансия</span><span class='m'>−машинист</span></div>
+<div class="lbl">Посадочная страница</div><a class="lp" href="https://berco-mpg.com/berco" target="_blank">https://berco-mpg.com/berco</a></div>
+<div class="gcol"><div class="lbl">Объявления в РСЯ — картинка с сайта Berco + текст</div><div class="serp net"><img src="img/rollers_wide.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px"><div><div class="t">Berco — ходовая для CAT, Komatsu, Hitachi</div><div class="d">Производитель ходовой из группы thyssenkrupp. Официальный представитель в РК.</div><div class="u">berco-mpg.com</div><div class="adl">Реклама</div></div></div><div class="serp net"><img src="img/tk_wide.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px"><div><div class="t">Кто делает ходовую для Komatsu и CAT? Berco</div><div class="d">Катки, ленивцы, звёздочки, цепи Berco. Подбор по модели машины в Казахстане.</div><div class="u">berco-mpg.com</div><div class="adl">Реклама</div></div></div><div class="serp net"><img src="img/aerial_wide.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px"><div><div class="t">Завод Berco в Италии — ходовая с 1920 года</div><div class="d">Ходовая для экскаваторов и бульдозеров от 1 до 330 тонн. Гарантия до 4000 м/ч.</div><div class="u">berco-mpg.com</div><div class="adl">Реклама</div></div></div></div></div></details></div>
+</section>
+
+<section id="budget">
+  <div class="kicker">03 · Бюджет</div>
+  <h2>Общий лимит остаётся 35 000 ₸ в неделю</h2>
+  <div class="card"><ul class="dec" style="margin:0;padding-left:18px">
+    <li><b>Б1 заменяет К5</b> из основной РК: те же запросы про Berco, но больше написаний (берко, бэрко, berko) и группа «аналог ходовой». К5 в кабинете не создавал, чтобы фразы не конкурировали между собой.</li>
+    <li><b>Б2 — 5 000 ₸ в неделю</b>. Их взял из РСЯ К7: в кабинете у К7 стоит 16 500 ₸ вместо 19 000.</li>
+    <li><b>К8 (ретаргетинг) пока не создан</b> — ему нужна аудитория Метрики «были на сайте» (см. раздел 05). Когда добавим, его 3 000 ₸ тоже возьмём из К7.</li>
+    <li>Сейчас в кабинете: поиск 13 500 ₸ + РСЯ 21 500 ₸ = <b>35 000 ₸ в неделю</b>.</li>
+  </ul></div>
+</section>
+
+<section id="account">
+  <div class="kicker">04 · Кабинет Директа</div>
+  <h2>Что уже создано (13.11)</h2>
+  <p class="sub">Логин mpg.amm.ct. Все новые кампании — черновики: не отправлены на модерацию и не тратят деньги. Старая «Единая перфоманс-кампания №1» (715120629) не изменялась.</p>
+  <div class="card"><table><tr><th>Кампания</th><th>ID</th><th class="n">₸/нед</th><th class="n">групп</th><th class="n">фраз</th><th class="n">объявл.</th><th>статус</th></tr><tr><td><b>Б1</b> · Поиск · Бренд Berco</td><td class="mono">716209210</td><td class="n">1 500</td><td class="n">3</td><td class="n">19</td><td class="n">7</td><td><span class="tag">черновик</span></td></tr><tr><td><b>Б2</b> · РСЯ · Знакомство с брендом Berco</td><td class="mono">716209578</td><td class="n">5 000</td><td class="n">1</td><td class="n">10</td><td class="n">3</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К1</b> · Поиск · Ходовая по типу техники</td><td class="mono">716209284</td><td class="n">2 500</td><td class="n">5</td><td class="n">30</td><td class="n">10</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К2</b> · Поиск · Узлы ходовой</td><td class="mono">716209346</td><td class="n">2 500</td><td class="n">6</td><td class="n">35</td><td class="n">12</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К3</b> · Поиск · Ходовая по бренду техники</td><td class="mono">716209397</td><td class="n">1 500</td><td class="n">6</td><td class="n">40</td><td class="n">12</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К4</b> · Поиск · Карьерные модели</td><td class="mono">716209454</td><td class="n">1 500</td><td class="n">10</td><td class="n">47</td><td class="n">20</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К6</b> · Поиск · Запчасти спецтехники</td><td class="mono">716209538</td><td class="n">4 000</td><td class="n">2</td><td class="n">13</td><td class="n">4</td><td><span class="tag">черновик</span></td></tr><tr><td><b>К7</b> · РСЯ · Ходовая для спецтехники</td><td class="mono">716209592</td><td class="n">16 500</td><td class="n">1</td><td class="n">8</td><td class="n">2</td><td><span class="tag">черновик</span></td></tr><tr><td><b>Итого</b></td><td></td><td class="n"><b>35 000</b></td><td class="n">34</td><td class="n">202</td><td class="n">70</td><td></td></tr></table></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Настроено в каждой кампании</h3><ul class="dec" style="margin:8px 0 0;padding-left:18px">
+      <li>Казахстан, Пн–Пт 8:00–21:00 (100%), Сб–Вс 10:00–18:00 (50%), время Алматы</li>
+      <li>Стратегия «Максимум кликов» с недельным бюджетом и потолком цены клика</li>
+      <li>Метрика 110341229 и цели: отправка формы, клик по телефону, мессенджер, контактные данные</li>
+      <li>Минус-слова аккаунта (авто, ремонт, китайская техника и др.) + минус-слова групп</li>
+      <li>UTM-метки, быстрые ссылки, уточнения, мобильные −50%</li>
+      <li>В РСЯ — 3 картинки с сайта berco-mpg.com, обрезаны до 16:9</li>
+    </ul></div>
+    <div class="card"><h3>Что изменилось в Директе и как я это учёл</h3><ul class="dec" style="margin:8px 0 0;padding-left:18px">
+      <li><b>Второго заголовка больше нет.</b> Директ создаёт объявления только «комбинаторными»: второй заголовок приклеивается к первому, если оба влезают в 56 знаков, иначе отбрасывается. Превью на страницах показывают объявления уже в таком виде.</li>
+      <li><b>В поиске автотаргетинг нельзя выключить.</b> Оставил только «целевые запросы», остальные категории выключены. В РСЯ автотаргетинг остановлен.</li>
+      <li><b>Символ «·» в текстах запрещён</b> — заменил на запятые.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="kicker">05 · Дальше</div>
+  <h2>Что нужно для запуска</h2>
+  <div class="card"><ol class="steps">
+    <li><b>Ваше «да» на модерацию и запуск</b><span>Отправлю все 8 кампаний на модерацию. После одобрения включаем новые кампании, а старую оставляем выключенной. Удалять её не будем — она нужна для сравнения.</span></li>
+    <li><b>Интересы в К7</b><span>Через API доступны только интересы мобильных приложений, про спецтехнику там ничего нет. Сегменты «спецтехника / стройка / добыча» добавлю в интерфейсе Директа.</span></li>
+    <li><b>К8 · ретаргетинг</b><span>Нужен сегмент Метрики «посетители berco-mpg.com за 30 дней без заявки». Создам его в Метрике и добавлю кампанию.</span></li>
+    <li><b>Визитка</b><span>Адрес, телефон и часы работы к объявлениям ещё не добавлены — пришлите актуальные данные.</span></li>
+    <li><b>ЧТЗ / Т-130 / Т-170</b><span>Остаются в минус-словах групп про бульдозеры, пока вы не скажете иначе.</span></li>
+  </ol></div>
+</section>
+</main>
+<div class="pager"><a href="campaign.html"><span>← Назад</span>2 · Новая РК</a><div style='flex:1'></div></div>
+</body>
+</html>
